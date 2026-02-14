@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+:root{
+  --bg: #0b0f12; /* deep space black */
+  --glass: rgba(255,255,255,0.03);
+  --accent: #00ff6a; /* hacker green */
+  --accent-2: #ff385c; /* neon red */
+  --muted: rgba(255,255,255,0.6);
+}
+
+@media (prefers-color-scheme: dark){
+  :root{--bg:#060708}
+}
+
+html,body,#root{height:100%;}
+
+/* Lenis smooth scroll handles scroll-behavior; don't set it here to avoid conflicts */
+body{
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(0,255,106,0.03), transparent),
+              radial-gradient(1000px 500px at 90% 90%, rgba(255,56,92,0.02), transparent),
+              var(--bg);
+  color: #e6eef8;
+  font-family: theme('fontFamily.sans');
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Glassmorphism card */
+.glass {
+  background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.04);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 16px;
+}
+
+/* Neon glow */
+.glow {
+  box-shadow: 0 8px 40px rgba(0,255,106,0.06), 0 0 30px rgba(255,56,92,0.02);
+}
+
+a.cta {
+  display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:12px;font-weight:600;
+}
+
+.btn-primary{background:linear-gradient(90deg,var(--accent),#00d67a);color:#001115}
+.btn-ghost{border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--muted)}
+
+/* Animated scanning overlay */
+.scan-line {
+  position:absolute;inset:0;pointer-events:none;mix-blend-mode:overlay;
+  background-image:linear-gradient(180deg, transparent 40%, rgba(0,255,106,0.06) 50%, transparent 60%);
+  background-size:100% 120px;
+  animation: scan 6s linear infinite;
+}
+@keyframes scan {from{background-position-y:0}to{background-position-y:120px}}
+
+/* Responsive container */
+.container {max-width:1200px;margin:0 auto;padding:48px 24px}
+@media (max-width:768px){.container{padding:36px 18px}}
+
+/* Utilities for subtle motion */
+.motion-fade {opacity:0;transform:translateY(8px);transition:all .6s cubic-bezier(.2,.9,.3,1)}
+.motion-fade.in {opacity:1;transform:none}
+
+/* Section spacing */
+.section {padding:96px 0}
+@media (max-width:768px){.section{padding:56px 0}}
