@@ -14,7 +14,8 @@ module.exports = {
         glass: 'rgba(255,255,255,0.04)'
       },
       fontFamily: {
-        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif']
+        sans: ['Sora', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        display: ['Space Grotesk', 'Sora', 'ui-sans-serif', 'system-ui', 'sans-serif']
       },
       boxShadow: {
         glow: '0 6px 30px rgba(0,255,106,0.08), inset 0 1px 0 rgba(255,255,255,0.02)'

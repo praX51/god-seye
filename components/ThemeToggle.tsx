@@ -28,8 +28,8 @@ export default function ThemeToggle(){
   }
 
   return (
-    <button aria-label="Toggle theme" onClick={toggle} className="glass p-2 rounded-md">
-      {theme === 'dark' ? '🌙' : '☀️'}
+    <button aria-label="Toggle theme" onClick={toggle} className="glass px-3 py-2 rounded-full text-xs text-[var(--muted)]">
+      {theme === 'dark' ? 'Dark' : 'Light'}
     </button>
   )
 }
